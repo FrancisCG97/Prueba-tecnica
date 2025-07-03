@@ -54,7 +54,6 @@ function MiCalendario() {
           start: parseISO(t.due_date),
           end: parseISO(t.due_date),
         }));
-        console.log(tareasFormateadas);
         setTarea(tareasFormateadas);
       })
       .catch((err) => console.error("Error al cargar tareas:", err));
@@ -65,7 +64,6 @@ function MiCalendario() {
   }, []);
 
   const handleClickBoton = (date) => {
-    console.log("Clic en celda:", date);
     setFechaSeleccionada(date);
     setModalAbierto(true);
   };

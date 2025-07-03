@@ -58,7 +58,7 @@ def validaciones_tarea(tarea: TareaBase):
     if not tarea.title.strip():
         raise HTTPException(status_code=400, detail="Debe ingresar una tarea.")
     if tarea.due_date <= date.today():
-        raise HTTPException(status_code=400, detail="La fecha de la tarea debe ser futura.")
+        raise HTTPException(status_code=400, detail="La fecha de la tarea debe ser posterior a hoy.")
 
 
 @app.get("/tasks", response_model=list[Tarea])

@@ -58,10 +58,10 @@ function ListaTareas() {
         <table className="table">
           <thead>
             <tr>
-              <th>Título</th>
-              <th>Fecha</th>
-              <th>Prioridad</th>
-              <th>Estado</th>
+              <th id="header-tabla-filtro">Título</th>
+              <th id="header-tabla-filtro">Fecha</th>
+              <th id="header-tabla-filtro">Prioridad</th>
+              <th id="header-tabla-filtro">Estado</th>
             </tr>
           </thead>
           <tbody>
@@ -76,10 +76,10 @@ function ListaTareas() {
               )
               .map((tarea) => (
                 <tr key={tarea.id}>
-                  <td>{tarea.title}</td>
-                  <td>{tarea.due_date}</td>
-                  <td>{tarea.priority}</td>
-                  <td>{tarea.status}</td>
+                  <td id="body-tabla-filtro">{tarea.title}</td>
+                  <td id="body-tabla-filtro">{tarea.due_date}</td>
+                  <td id="body-tabla-filtro">{tarea.priority}</td>
+                  <td id="body-tabla-filtro">{tarea.status}</td>
                 </tr>
               ))}
           </tbody>

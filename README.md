@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# ¡Bienvenidos a mi prueba técnica!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En esta oportunidad, desarrollé un Gestor de tareas, en el cual se pueden crear, ver, editar y eliminar tareas dentro de un calendario. Además,
+estas tareas pueden filtrarse por prioridad (alta, media y baja), y por estado (pendiente y completada).
 
-## Available Scripts
 
-In the project directory, you can run:
+### Tecnologías utilizadas:
 
-### `npm start`
+Para este proyecto, se utilizó:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La interfaz se desarrolló con HTML, JavaScript, React, CSS y Bootstrap.
+La API se desarrolló con Python y FastAPI, y se conecta a través de axios con el frontend.
+Por último, como base de datos se utilizó un archivo .json para persistencia simple.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Arquitectura del proyecto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend: Python monolítico, ya que se considera una aplicación pequeña, por lo que no es estrictamente necesario una arquitectura robusta.
 
-### `npm run build`
+Frontend: React como base del proyecto, con componentes separados en carpetas: "components", en donde se encuentran los componentes reutilizables del proyecto, y "pages" en donde están las rutas principales del proyecto, en este caso para visualizar el calendario o la tabla de filtrado.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instrucciones para iniciar localmente el proyecto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Luego de clonar el proyecto, se debe:
 
-### `npm run eject`
+1.- Instalar todas las dependencias con el comando `npm install` en el directorio raíz.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.- Ingresar a la carpeta backend con el comando `cd .\backend\`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.- Iniciar el backend con el comando `npm run dev:backend`. 
+(¿Quieres saber si está funcionando correctamente?, simplemente ingresa a la ruta del [localhost](http://localhost:8000/tasks))
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4.- Ingresar a la carpeta frontend con el comando `cd .\frontend\`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5.- Iniciar la interfaz con el comando `npm start`.
 
-## Learn More
+6.- ¡Y listo! ¡Ahora puedes utilizar correctamente el Gestor de tareas de forma local!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Desarrolladora:
 
-### Code Splitting
+Por último, me encantaría agradecer el poder hacer este proyecto, espero nos veamos nuevamente.
+¡Hasta pronto!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
