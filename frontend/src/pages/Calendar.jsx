@@ -120,7 +120,7 @@ function MiCalendario() {
 
       {modalAbierto && (
         <div className="modal show d-block" tabIndex="-1">
-          <div className="modal-dialog">
+          <div className="modal-dialog modal-lg">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Agregar Tarea</h5>
@@ -132,11 +132,13 @@ function MiCalendario() {
               </div>
               <div className="modal-body">
                 <p>Fecha: {fechaSeleccionada?.toLocaleDateString()}</p>
+                <div id="formulario">
                 <FormularioTareas
                   fechaInicial={fechaSeleccionada}
                   onGuardar={guardarTarea}
                   onCancelar={() => setModalAbierto(false)}
                 />
+                </div>
                 <VisualizarDatos
                   fechaSeleccionada={fechaSeleccionada}
                   onActualizar={cargarTareas}

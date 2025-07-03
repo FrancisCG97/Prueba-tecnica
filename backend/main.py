@@ -18,9 +18,15 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
+
+def normalizar_tareas(tareas):
+    for tarea in tareas:
+        tarea["status"] = tarea["status"].lower()
+        tarea["priority"] = tarea["priority"].lower()
+    return tareas
 
 
 class TareaBase(BaseModel):
@@ -48,16 +54,23 @@ def nuevo_id(tareas):
     ids = [t["id"] for t in tareas]
     return max(ids) + 1 if ids else 1
 
+def validaciones_tarea(tarea: TareaBase):
+    if not tarea.title.strip():
+        raise HTTPException(status_code=400, detail="Debe ingresar una tarea.")
+    if tarea.due_date <= date.today():
+        raise HTTPException(status_code=400, detail="La fecha de la tarea debe ser futura.")
+
 
 @app.get("/tasks", response_model=list[Tarea])
 def lista_tareas():
-    return cargar_tareas()
+    tareas = cargar_tareas()
+    return normalizar_tareas(tareas)
+
 
 
 @app.post("/tasks", response_model=Tarea)
 def crear_tarea(tarea: TareaBase):
-    if tarea.due_date <= date.today():
-        raise HTTPException(status_code=400, detail="La fecha debe ser futura.")
+    validaciones_tarea(tarea)
     tareas = cargar_tareas()
     tarea_dict = tarea.dict()
     tarea_dict["due_date"] = tarea_dict["due_date"].isoformat()
@@ -69,8 +82,7 @@ def crear_tarea(tarea: TareaBase):
 
 @app.put("/tasks/{tarea_id}", response_model=Tarea)
 def tarea_actualizada(tarea_id: int, actualizado: TareaBase):
-    if actualizado.due_date <= date.today():
-        raise HTTPException(status_code=400, detail="La fecha debe ser futura.")
+    validaciones_tarea(actualizado)
     tareas = cargar_tareas()
     for tarea in tareas:
         if tarea["id"] == tarea_id:

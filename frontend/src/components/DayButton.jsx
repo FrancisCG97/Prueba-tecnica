@@ -1,4 +1,21 @@
 const BotonDia = ({ date, label, onClick }) => {
+
+  const esFechaFutura = (fecha) => {
+    const hoy = new Date();
+    const comparar = new Date(fecha);
+    return comparar > hoy;
+  };
+
+  const handleClickFecha = (e) => {
+    e.stopPropagation();
+
+    if (!esFechaFutura(date)) {
+      alert("La fecha debe ser posterior a hoy.");
+      return;
+    }
+    onClick(date);
+  };
+
   return (
     <div style={{ position: "relative" }}>
       <span>{label}</span>
@@ -15,10 +32,7 @@ const BotonDia = ({ date, label, onClick }) => {
           marginTop: -7,
           fontWeight: "bold",
         }}
-        onClick={(e) => {
-          e.stopPropagation();
-          onClick(date);
-        }}
+        onClick={handleClickFecha}
       >
         +
       </button>

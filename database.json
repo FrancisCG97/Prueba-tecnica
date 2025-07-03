@@ -1,38 +1,10 @@
 [
     {
-        "title": "asdasdasdasd",
-        "due_date": "2025-07-04",
-        "priority": "alta",
-        "status": "pendiente",
-        "id": 1
-    },
-    {
-        "title": "Tarea 2",
-        "due_date": "2025-07-09",
-        "priority": "media",
-        "status": "pendiente",
-        "id": 2
-    },
-    {
         "title": "Prueba alta",
         "due_date": "2025-07-17",
         "priority": "alta",
         "status": "pendiente",
         "id": 3
-    },
-    {
-        "title": "prueba baja",
-        "due_date": "2025-07-12",
-        "priority": "baja",
-        "status": "completada",
-        "id": 4
-    },
-    {
-        "title": "prueba media",
-        "due_date": "2025-07-26",
-        "priority": "media",
-        "status": "pendiente",
-        "id": 5
     },
     {
         "title": "prueba pendiente",
@@ -47,5 +19,12 @@
         "priority": "media",
         "status": "completada",
         "id": 7
+    },
+    {
+        "title": "prueba 19",
+        "due_date": "2025-07-19",
+        "priority": "media",
+        "status": "completada",
+        "id": 10
     }
 ]

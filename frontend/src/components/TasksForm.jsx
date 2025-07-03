@@ -5,6 +5,7 @@ function FormularioTareas({ fechaInicial, onGuardar, onCancelar }) {
   const [fecha, setFecha] = useState("");
   const [prioridad, setPrioridad] = useState("");
   const [estado, setEstado] = useState("");
+  const [validacion, setValidacion] = useState([]);
 
   useEffect(() => {
     if (fechaInicial) {
@@ -13,8 +14,16 @@ function FormularioTareas({ fechaInicial, onGuardar, onCancelar }) {
   }, [fechaInicial]);
 
   const handleSubmit = () => {
-    if (!titulo || !estado || !prioridad) return;
+    const erroresValidacion = [];
 
+    if (!titulo.trim()) erroresValidacion.push("El título es obligatorio.");
+    if (!prioridad) erroresValidacion.push("La prioridad es obligatoria.");
+    if (!estado) erroresValidacion.push("El estado es obligatorio.");
+
+    if (erroresValidacion.length > 0) {
+      setValidacion(erroresValidacion);
+      return;
+    }
     const fechaConHora = new Date(fecha + "T00:00:00");
 
     const nuevaTarea = {
@@ -30,10 +39,20 @@ function FormularioTareas({ fechaInicial, onGuardar, onCancelar }) {
     setFecha("");
     setEstado("");
     setPrioridad("");
+    setValidacion([]);
   };
 
   return (
     <>
+      {validacion.length > 0 && (
+        <div className="alert alert-danger" role="alert">
+          <ul className="mb-0">
+            {validacion.map((err, i) => (
+              <li key={i}>{err}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="form mb-3">
         <input
           type="text"
@@ -41,6 +60,7 @@ function FormularioTareas({ fechaInicial, onGuardar, onCancelar }) {
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
           placeholder="Ingrese una tarea"
+          required
         />
       </div>
 
@@ -49,6 +69,7 @@ function FormularioTareas({ fechaInicial, onGuardar, onCancelar }) {
           className="form-select"
           value={prioridad}
           onChange={(e) => setPrioridad(e.target.value)}
+          required
         >
           <option value="">Prioridad de la tarea</option>
           <option value="baja">Baja</option>
@@ -62,6 +83,7 @@ function FormularioTareas({ fechaInicial, onGuardar, onCancelar }) {
           className="form-select"
           value={estado}
           onChange={(e) => setEstado(e.target.value)}
+          required
         >
           <option value="">Estado de la tarea</option>
           <option value="pendiente">Pendiente</option>

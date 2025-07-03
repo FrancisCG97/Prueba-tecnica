@@ -8,12 +8,13 @@ h1 {
   justify-content: center;
 }
 
-.table.table-striped-columns {
-  border: solid #a66ee5 3px;
+img {
+  width: 20px;
+  height: 20px;
 }
 
-.form-control {
-    border: solid #a66ee5 3px;
+.table.table-striped-columns {
+  border: solid #a66ee5 3px;
 }
 
 #inputs,
@@ -27,10 +28,21 @@ h1 {
   flex-direction: column;
 }
 
+#formulario {
+  margin-bottom: 2%;
+}
+
 #agregar-tarea {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#botones-acciones {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-bottom: none;
 }
 
 #tabla-filtro {
