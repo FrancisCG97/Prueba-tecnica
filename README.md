@@ -28,14 +28,18 @@ Luego de clonar el proyecto, se debe:
 
 2.- Ingresar a la carpeta backend con el comando `cd .\backend\`.
 
-3.- Iniciar el backend con el comando `npm run dev:backend`. 
+3.- Instalar las dependencias restantes en el backend con `npm install`.
+
+4.- Iniciar el backend con el comando `npm run dev:backend`. 
 (¿Quieres saber si está funcionando correctamente?, simplemente ingresa a la ruta del [localhost](http://localhost:8000/tasks))
 
-4.- Ingresar a la carpeta frontend con el comando `cd .\frontend\`.
+5.- Ingresar a la carpeta frontend con el comando `cd .\frontend\`.
 
-5.- Iniciar la interfaz con el comando `npm start`.
+6.- Instalar las dependencias restantes en el frontend con `npm install`.
 
-6.- ¡Y listo! ¡Ahora puedes utilizar correctamente el Gestor de tareas de forma local!
+7.- Iniciar la interfaz con el comando `npm start`.
+
+8.- ¡Y listo! ¡Ahora puedes utilizar correctamente el Gestor de tareas de forma local!
 
 
 ### Desarrolladora:
