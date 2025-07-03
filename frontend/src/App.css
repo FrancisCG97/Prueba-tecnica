@@ -17,8 +17,72 @@ h1 {
 }
 
 #inputs,
-#tabla,
-#calendario {
+#tabla {
   margin: 3%;
 }
+
+#calendario {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#agregar-tarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tabla-filtro {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#filtro {
+  width: 1000px;
+  margin-top: 2%;
+}
+
+#filtrado,
+#volver-calendario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#boton-filtrar,
+#boton-calendario {
+  background-color: #e1ccfc;
+  border: solid black 2px;
+  width: 50%;
+  font-weight: bold;
+  color: black;
+}
+
+#select-filtro {
+  width: 65%;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+#primer-select {
+  width: 35%;
+  margin-right: 1%;
+}
+
+#segundo-select {
+  width: 35%;
+}
+
+#lista-tareas {
+  width: 90%;
+}
+
+
 

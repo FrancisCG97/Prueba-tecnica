@@ -1,0 +1,51 @@
+[
+    {
+        "title": "asdasdasdasd",
+        "due_date": "2025-07-04",
+        "priority": "alta",
+        "status": "pendiente",
+        "id": 1
+    },
+    {
+        "title": "Tarea 2",
+        "due_date": "2025-07-09",
+        "priority": "media",
+        "status": "pendiente",
+        "id": 2
+    },
+    {
+        "title": "Prueba alta",
+        "due_date": "2025-07-17",
+        "priority": "alta",
+        "status": "pendiente",
+        "id": 3
+    },
+    {
+        "title": "prueba baja",
+        "due_date": "2025-07-12",
+        "priority": "baja",
+        "status": "completada",
+        "id": 4
+    },
+    {
+        "title": "prueba media",
+        "due_date": "2025-07-26",
+        "priority": "media",
+        "status": "pendiente",
+        "id": 5
+    },
+    {
+        "title": "prueba pendiente",
+        "due_date": "2025-07-14",
+        "priority": "baja",
+        "status": "pendiente",
+        "id": 6
+    },
+    {
+        "title": "prueba completada",
+        "due_date": "2025-07-30",
+        "priority": "media",
+        "status": "completada",
+        "id": 7
+    }
+]
